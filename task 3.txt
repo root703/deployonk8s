@@ -1,0 +1,80 @@
+To complete the task, follow these steps on the provided Ubuntu instance:
+
+1. Install Git:
+   If Git is not already installed, you can install it using the package manager:
+
+   ```bash
+   sudo apt update
+   sudo apt install git
+   ```
+
+2. Configure Git with the name and email:
+
+   ```bash
+   git config --global user.name "awsome"
+   git config --global user.email "awsome@hackajob.co"
+   ```
+
+3. Clone the repository:
+
+   ```bash
+   git clone https://github.com/hackajob/git-challenge /root/git-challenge
+   ```
+
+4. Change directory to the cloned repository:
+
+   ```bash
+   cd /root/git-challenge
+   ```
+
+5. Delete the remote with name "origin":
+
+   ```bash
+   git remote rm origin
+   ```
+
+6. Add the remote "origin" back pointing to the local repository:
+
+   ```bash
+   git remote add origin /root/git-challenge/.git
+   ```
+
+7. Check out to the "challenge" branch:
+
+   ```bash
+   git checkout challenge
+   ```
+
+8. Create a new file "hello.world" (you can use any text editor of your choice):
+
+   ```bash
+   echo "Hello, world!" > hello.world
+   ```
+
+9. Commit and push the newly created file:
+
+   ```bash
+   git add hello.world
+   git commit -m "First Commit!"
+   git push origin challenge
+   ```
+
+10. Checkout back to the "main" branch:
+
+    ```bash
+    git checkout main
+    ```
+
+11. Apply the changes from the "challenge" branch to the "main" branch:
+
+    ```bash
+    git merge challenge
+    ```
+
+12. Push the changes to the "main" branch:
+
+    ```bash
+    git push origin main
+    ```
+
+Now, the changes made in the "challenge" branch have been merged into the "main" branch and pushed to the remote repository.
