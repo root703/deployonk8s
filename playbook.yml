@@ -1,0 +1,20 @@
+---
+- name: Create new user second-user
+  hosts: your_target_host
+  become: true
+
+  tasks:
+    - name: Add second-user
+      user:
+        name: second-user
+        shell: /bin/sh
+
+    - name: Create a new group second-group
+      group:
+        name: second-group
+
+    - name: Add second-user to the group second-group
+      user:
+        name: second-user
+        groups: second-group
+        append: yes
